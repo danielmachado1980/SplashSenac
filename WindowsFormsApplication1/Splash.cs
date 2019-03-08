@@ -37,20 +37,28 @@ namespace WindowsFormsApplication1
         private void timer1_Tick(object sender, EventArgs e)
         {
             loading++;
-            if(toRight)
+            if (toRight)
                 panel2.Left += 2;
             else
                 panel2.Left -= 2;
             if (panel2.Left < 0 || panel2.Left > 196)
                 toRight = !toRight;
 
-            if (loading > 800)
-            {
+            this.Opacity -= .005;
+            if (this.Opacity == 0) { 
                 timer1.Enabled = false;
                 Principal main = new Principal();
                 main.Show();
                 this.Hide();
             }
+
+            //if (loading > 800)
+            //{
+            //    timer1.Enabled = false;
+            //    Principal main = new Principal();
+            //    main.Show();
+            //    this.Hide();
+            //}
         }
     }
 }
