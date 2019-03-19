@@ -16,5 +16,12 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+
+        private void inserçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new frmCadClientes();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
