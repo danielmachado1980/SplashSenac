@@ -34,14 +34,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.grdClientes = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lstContatos = new System.Windows.Forms.ListBox();
-            this.grdClientes = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -97,8 +97,19 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(522, 179);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Endereço";
+            this.tabPage1.Text = "Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // grdClientes
+            // 
+            this.grdClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.grdClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdClientes.Location = new System.Drawing.Point(3, 3);
+            this.grdClientes.Name = "grdClientes";
+            this.grdClientes.ReadOnly = true;
+            this.grdClientes.Size = new System.Drawing.Size(516, 173);
+            this.grdClientes.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -119,17 +130,6 @@
             this.lstContatos.Size = new System.Drawing.Size(302, 69);
             this.lstContatos.TabIndex = 1;
             // 
-            // grdClientes
-            // 
-            this.grdClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.grdClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdClientes.Location = new System.Drawing.Point(3, 3);
-            this.grdClientes.Name = "grdClientes";
-            this.grdClientes.ReadOnly = true;
-            this.grdClientes.Size = new System.Drawing.Size(516, 173);
-            this.grdClientes.TabIndex = 0;
-            // 
             // frmCadClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,8 +146,8 @@
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

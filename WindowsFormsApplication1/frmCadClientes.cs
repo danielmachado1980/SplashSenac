@@ -32,7 +32,7 @@ namespace WindowsFormsApplication1
 
         private void frmCadClientes_Load(object sender, EventArgs e)
         {
-            lstContatos.DataSource = carregarClientes();
+            lstContatos.DataSource = carregarContatos();
             grdClientes.AutoGenerateColumns = false;
             grdClientes.AllowUserToAddRows = false;
             grdClientes.DataSource = carregarClientes();
@@ -48,6 +48,17 @@ namespace WindowsFormsApplication1
             column2.HeaderText = "Código";
             column2.DataPropertyName = "Codigo";
             grdClientes.Columns.Add(column2);
+        }
+
+        private List<Contatos> carregarContatos()
+        {
+            List<Contatos> lstContatos = new List<Contatos>();
+            var contato = new Contatos();
+            contato.telefones = "11-3265-1566";
+            lstContatos.Add(contato);
+            contato.telefones = "11-3265-1577";
+            lstContatos.Add(contato);
+            return lstContatos;
         }
 
         private List<Clientes> carregarClientes()

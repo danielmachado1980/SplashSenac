@@ -13,10 +13,13 @@ namespace WindowsFormsApplication1.Entidades
         public string CPF { get; set; }
         public DateTime DataNascimento { get; set; }
 
+        public List<Contatos> lstContatos { get; set; }
+
         //public override string ToString()
         //{
         //    return this.Nome;
         //}
         
     }
+
 }
