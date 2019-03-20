@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
         public Splash()
         {
             InitializeComponent();
-            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            //Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace WindowsFormsApplication1
                 panel2.Left += 2;
             else
                 panel2.Left -= 2;
-            if (panel2.Left < 0 || panel2.Left > 196)
+            if (panel2.Left <= 0 || panel2.Left > 196)
                 toRight = !toRight;
 
             this.Opacity -= .005;

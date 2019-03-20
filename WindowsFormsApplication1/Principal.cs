@@ -23,5 +23,25 @@ namespace WindowsFormsApplication1
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("Deseja realmente encerrar o programa?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                e.Cancel = true;    
+        }
+
+        private void pesquisaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new frmConClientes();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new frmConVendas();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

@@ -13,6 +13,8 @@ namespace WindowsFormsApplication1
 {
     public partial class frmCadClientes : Form
     {
+        private List<Contatos> lstContatos = new List<Contatos>();
+
         public frmCadClientes()
         {
             InitializeComponent();
@@ -22,6 +24,11 @@ namespace WindowsFormsApplication1
         {
             var cliente = new Clientes();
             cliente.Nome = txtNome.Text;
+            cliente.CPF = txtCPF.Text;
+            cliente.DataNascimento = txtDataNascimento.Value;
+            cliente.lstContatos = this.lstContatos;
+
+            //Mando para o BD - Salvar Dados
         }
 
         private void frmCadClientes_FormClosing(object sender, FormClosingEventArgs e)
@@ -32,48 +39,17 @@ namespace WindowsFormsApplication1
 
         private void frmCadClientes_Load(object sender, EventArgs e)
         {
-            lstContatos.DataSource = carregarContatos();
-            grdClientes.AutoGenerateColumns = false;
-            grdClientes.AllowUserToAddRows = false;
-            grdClientes.DataSource = carregarClientes();
-
-            DataGridViewTextBoxColumn column1 = new DataGridViewTextBoxColumn();
-            column1.Name = "Nome";
-            column1.HeaderText = "Nome";
-            column1.DataPropertyName = "Nome";
-            grdClientes.Columns.Add(column1);
-
-            DataGridViewTextBoxColumn column2 = new DataGridViewTextBoxColumn();
-            column2.Name = "Codigo";
-            column2.HeaderText = "Código";
-            column2.DataPropertyName = "Codigo";
-            grdClientes.Columns.Add(column2);
+            
         }
 
-        private List<Contatos> carregarContatos()
+        private void button1_Click(object sender, EventArgs e)
         {
-            List<Contatos> lstContatos = new List<Contatos>();
+            lstBoxContatos.DataSource = null;
             var contato = new Contatos();
-            contato.telefones = "11-3265-1566";
+            contato.telefones = txtContato.Text;
             lstContatos.Add(contato);
-            contato.telefones = "11-3265-1577";
-            lstContatos.Add(contato);
-            return lstContatos;
-        }
-
-        private List<Clientes> carregarClientes()
-        {
-            List<Clientes> lstClientes = new List<Clientes>();
-            var cliente = new Clientes();
-            cliente.Nome = "Daniel Machado";
-            lstClientes.Add(cliente);
-            cliente = new Clientes();
-            cliente.Nome = "Daniel Machado 1";
-            lstClientes.Add(cliente);
-            cliente = new Clientes();
-            cliente.Nome = "Daniel Machado 2";
-            lstClientes.Add(cliente);
-            return lstClientes;
+            lstBoxContatos.DataSource = lstContatos;
+            txtContato.Text = "";
         }
     }
 }
