@@ -32,6 +32,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             this.grdClientes.ReadOnly = true;
             this.grdClientes.Size = new System.Drawing.Size(540, 222);
             this.grdClientes.TabIndex = 1;
+            this.grdClientes.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdClientes_RowHeaderMouseClick);
             // 
             // textBox1
             // 
@@ -72,11 +74,20 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(79, 70);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.TabIndex = 5;
+            this.txtCodigo.Visible = false;
+            // 
             // frmConClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(540, 319);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -97,5 +108,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.TextBox txtCodigo;
     }
 }

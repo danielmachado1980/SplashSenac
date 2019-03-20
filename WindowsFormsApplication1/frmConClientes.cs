@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -30,17 +31,23 @@ namespace WindowsFormsApplication1
             var cliente = new Clientes();
             cliente.Nome = "Daniel Machado";
             cliente.CPF = "165.789.465-45";
+            cliente.Codigo = 1;
             lstClientes.Add(cliente);
             cliente = new Clientes();
             cliente.Nome = "Daniel Machado 1";
             cliente.CPF = "165.111.465-45";
+            cliente.Codigo = 2;
             lstClientes.Add(cliente);
             cliente = new Clientes();
             cliente.Nome = "Daniel Machado 2";
             cliente.CPF = "999.789.465-45";
+            cliente.Codigo = 3;
             lstClientes.Add(cliente);
             grdClientes.DataSource = lstClientes;
 
+            int rowindex = grdClientes.CurrentRow.Index;
+            //MessageBox.Show(rowindex.ToString());
+            txtCodigo.Text = grdClientes.Rows[rowindex].Cells[2].Value.ToString();
         }
 
         private void frmConClientes_Load(object sender, EventArgs e)
@@ -71,6 +78,12 @@ namespace WindowsFormsApplication1
             column3.DataPropertyName = "Codigo";
             column3.Visible = false;
             grdClientes.Columns.Add(column3);
+
+        }
+
+        private void grdClientes_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            txtCodigo.Text = grdClientes.Rows[e.RowIndex].Cells[2].Value.ToString();
         }
     }
 }
