@@ -23,6 +23,9 @@ namespace WindowsFormsApplication1
         {
             //Carregar os dados do banco
             carregarClientes();
+            //var frVendas = new frmConVendas();
+            //frVendas.MdiParent = this.ParentForm;
+            //frVendas.Show();
         }
 
         private void carregarClientes()

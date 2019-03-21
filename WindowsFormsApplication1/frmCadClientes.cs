@@ -26,9 +26,12 @@ namespace WindowsFormsApplication1
             cliente.Nome = txtNome.Text;
             cliente.CPF = txtCPF.Text;
             cliente.DataNascimento = txtDataNascimento.Value;
-            cliente.lstContatos = this.lstContatos;
 
             //Mando para o BD - Salvar Dados
+            if (!ValidadorCPF.eValido(cliente.CPF))
+                cliente.lstContatos = this.lstContatos;
+            else
+                MessageBox.Show("CPF inválido. ", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void frmCadClientes_FormClosing(object sender, FormClosingEventArgs e)

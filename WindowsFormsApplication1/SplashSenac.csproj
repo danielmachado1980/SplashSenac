@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Entidades\Clientes.cs" />
     <Compile Include="Entidades\Contatos.cs" />
+    <Compile Include="Entidades\ValidadorCPF.cs" />
     <Compile Include="frmCadClientes.cs">
       <SubType>Form</SubType>
     </Compile>
