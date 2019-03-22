@@ -14,10 +14,17 @@ namespace WindowsFormsApplication1
     public partial class frmCadClientes : Form
     {
         private List<Contatos> lstContatos = new List<Contatos>();
+        private Clientes clienteSelecionado;
 
         public frmCadClientes()
         {
             InitializeComponent();
+        }
+
+        public frmCadClientes(Clientes clienteSelecionado)
+        {
+            InitializeComponent();
+            this.clienteSelecionado = clienteSelecionado;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -29,20 +36,29 @@ namespace WindowsFormsApplication1
 
             //Mando para o BD - Salvar Dados
             if (!ValidadorCPF.eValido(cliente.CPF))
-                cliente.lstContatos = this.lstContatos;
-            else
+            {
                 MessageBox.Show("CPF inválido. ", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+                MessageBox.Show("CPF válido. ", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void frmCadClientes_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente fechar o cadastro?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
-                e.Cancel = true;
+            //if (MessageBox.Show("Deseja realmente fechar o cadastro?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            //    e.Cancel = true;
         }
 
         private void frmCadClientes_Load(object sender, EventArgs e)
         {
-            
+            if (clienteSelecionado != null)
+            {
+                txtNome.Text = clienteSelecionado.Nome;
+                txtCPF.Text = clienteSelecionado.CPF;
+                txtDataNascimento.Value = clienteSelecionado.DataNascimento;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

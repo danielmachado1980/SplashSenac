@@ -34,23 +34,26 @@ namespace WindowsFormsApplication1
             var cliente = new Clientes();
             cliente.Nome = "Daniel Machado";
             cliente.CPF = "165.789.465-45";
+            cliente.DataNascimento = DateTime.Today.AddYears(- 30);
             cliente.Codigo = 1;
             lstClientes.Add(cliente);
             cliente = new Clientes();
             cliente.Nome = "Daniel Machado 1";
             cliente.CPF = "165.111.465-45";
+            cliente.DataNascimento = DateTime.Today.AddYears(-32);
             cliente.Codigo = 2;
             lstClientes.Add(cliente);
             cliente = new Clientes();
             cliente.Nome = "Daniel Machado 2";
             cliente.CPF = "999.789.465-45";
+            cliente.DataNascimento = DateTime.Today.AddYears(-28);
             cliente.Codigo = 3;
             lstClientes.Add(cliente);
             grdClientes.DataSource = lstClientes;
 
-            int rowindex = grdClientes.CurrentRow.Index;
+            //int rowindex = grdClientes.CurrentRow.Index;
             //MessageBox.Show(rowindex.ToString());
-            txtCodigo.Text = grdClientes.Rows[rowindex].Cells[2].Value.ToString();
+            //txtCodigo.Text = grdClientes.Rows[rowindex].Cells[2].Value.ToString();
         }
 
         private void frmConClientes_Load(object sender, EventArgs e)
@@ -82,11 +85,38 @@ namespace WindowsFormsApplication1
             column3.Visible = false;
             grdClientes.Columns.Add(column3);
 
+            DataGridViewTextBoxColumn column4 = new DataGridViewTextBoxColumn();
+            column4.Name = "DataNascimento";
+            column4.HeaderText = "Data Nascimento";
+            column4.DataPropertyName = "DataNascimento";
+            column4.Width = 150;
+            grdClientes.Columns.Add(column4);
+
         }
 
         private void grdClientes_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             txtCodigo.Text = grdClientes.Rows[e.RowIndex].Cells[2].Value.ToString();
+        }
+
+        private void grdClientes_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var clienteSelecionado = new Clientes();
+            clienteSelecionado.Nome = grdClientes.Rows[e.RowIndex].Cells[0].Value.ToString();
+            clienteSelecionado.CPF = grdClientes.Rows[e.RowIndex].Cells[1].Value.ToString();
+            clienteSelecionado.Codigo = int.Parse(grdClientes.Rows[e.RowIndex].Cells[2].Value.ToString());
+            clienteSelecionado.DataNascimento = DateTime.Parse(grdClientes.Rows[e.RowIndex].Cells[3].Value.ToString());
+
+            frmCadClientes frmOpen = Application.OpenForms["frmCadClientes"] != null ? (frmCadClientes)Application.OpenForms["frmCadClientes"] : null;
+            if (frmOpen != null)
+            {
+                frmOpen.Close();
+            }
+
+            var frm = new frmCadClientes(clienteSelecionado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1.Entidades
 {
-    class Contatos
+    public class Contatos
     {
         public string telefones { get; set; }
 

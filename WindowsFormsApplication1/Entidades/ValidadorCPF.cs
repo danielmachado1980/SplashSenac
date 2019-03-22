@@ -8,9 +8,13 @@ namespace WindowsFormsApplication1.Entidades
 {
     public static class ValidadorCPF
     {
+        /// <summary>
+        /// Método auxiliar para verificar a consistência do CPF.
+        /// </summary>
+        /// <param name="cpf">String com o valor do CPF a ser verificado</param>
+        /// <returns>True:Válido || False:Inválido</returns>
         public static bool eValido(string cpf)
         {
-
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             string tempCpf;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1.Entidades
 {
-    class Clientes
+    public class Clientes
     {
         public int Codigo { get; set; }
         public string Nome { get; set; }

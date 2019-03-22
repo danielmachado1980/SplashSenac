@@ -41,34 +41,39 @@
             this.grdClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grdClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grdClientes.Location = new System.Drawing.Point(0, 97);
+            this.grdClientes.Location = new System.Drawing.Point(0, 120);
+            this.grdClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grdClientes.Name = "grdClientes";
             this.grdClientes.ReadOnly = true;
-            this.grdClientes.Size = new System.Drawing.Size(540, 222);
+            this.grdClientes.Size = new System.Drawing.Size(720, 273);
             this.grdClientes.TabIndex = 1;
             this.grdClientes.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdClientes_RowHeaderMouseClick);
+            this.grdClientes.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdClientes_RowHeaderMouseDoubleClick);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 32);
+            this.textBox1.Location = new System.Drawing.Point(16, 39);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 20);
+            this.textBox1.Size = new System.Drawing.Size(303, 22);
             this.textBox1.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 16);
+            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nome";
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(453, 32);
+            this.btnPesquisar.Location = new System.Drawing.Point(604, 39);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btnPesquisar.Size = new System.Drawing.Size(100, 28);
             this.btnPesquisar.TabIndex = 4;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -76,22 +81,24 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(79, 70);
+            this.txtCodigo.Location = new System.Drawing.Point(105, 86);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(132, 22);
             this.txtCodigo.TabIndex = 5;
             this.txtCodigo.Visible = false;
             // 
             // frmConClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 319);
+            this.ClientSize = new System.Drawing.Size(720, 393);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.grdClientes);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmConClientes";
             this.ShowIcon = false;
             this.Text = "Consulta de Clientes";
