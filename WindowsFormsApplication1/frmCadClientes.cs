@@ -70,5 +70,12 @@ namespace WindowsFormsApplication1
             lstBoxContatos.DataSource = lstContatos;
             txtContato.Text = "";
         }
+
+        internal void atualizaCliente(Clientes clienteSelecionado)
+        {
+            txtNome.Text = clienteSelecionado.Nome;
+            txtCPF.Text = clienteSelecionado.CPF;
+            txtDataNascimento.Value = clienteSelecionado.DataNascimento;
+        }
     }
 }

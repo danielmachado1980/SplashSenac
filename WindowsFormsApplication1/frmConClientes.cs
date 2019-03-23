@@ -110,13 +110,16 @@ namespace WindowsFormsApplication1
             frmCadClientes frmOpen = Application.OpenForms["frmCadClientes"] != null ? (frmCadClientes)Application.OpenForms["frmCadClientes"] : null;
             if (frmOpen != null)
             {
-                frmOpen.Close();
+                frmOpen.atualizaCliente(clienteSelecionado);
+                frmOpen.Activate();
             }
-
-            var frm = new frmCadClientes(clienteSelecionado);
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
-
+            else
+            {
+                var frm = new frmCadClientes(clienteSelecionado);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+                frm.Activate();
+            }
         }
     }
 }
